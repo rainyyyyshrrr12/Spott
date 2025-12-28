@@ -31,11 +31,11 @@ export default function LandingPage() {
               memorable. Join our community today.
             </p>
 
-            <Link href="/explore">
-              <Button size="xl" className={"rounded-full"}>
-                Get Started
-              </Button>
-            </Link>
+           <Button asChild size="lg" className="rounded-full">
+  <Link href="/explore">
+    Get Started
+  </Link>
+</Button>
           </div>
 
           {/* Right - 3D Phone Mockup */}

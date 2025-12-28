@@ -34,7 +34,7 @@ import {
 } from "@/components/ui/select";
 
 import UnsplashImagePicker from "@/components/unsplash-image-picker";
-import AIEventCreator from "./_components/ai-event-creator";
+
 import UpgradeModal from "@/components/upgrade-modal";
 import { CATEGORIES } from "@/lib/data";
 import Image from "next/image";
@@ -77,27 +77,30 @@ export default function CreateEventPage() {
     api.events.createEvent
   );
 
-  const {
-    register,
-    handleSubmit,
-    watch,
-    setValue,
-    control,
-    formState: { errors },
-  } = useForm({
-    resolver: zodResolver(eventSchema),
-    defaultValues: {
-      locationType: "physical",
-      ticketType: "free",
-      capacity: 50,
-      themeColor: "#1e3a8a",
-      category: "",
-      state: "",
-      city: "",
-      startTime: "",
-      endTime: "",
-    },
-  });
+const {
+  register,
+  handleSubmit,
+  watch,
+  setValue,
+  control,
+  formState: { errors },
+} = useForm({
+  resolver: zodResolver(eventSchema),
+  defaultValues: {
+    locationType: "physical",
+    ticketType: "free",
+    capacity: 50,
+    themeColor: "#1e3a8a",
+    category: "",
+    state: "",
+    city: "",
+    startTime: "",
+    endTime: "",
+    startDate: undefined,
+    endDate: undefined,
+  },
+});
+
 
   const themeColor = watch("themeColor");
   const ticketType = watch("ticketType");
@@ -195,14 +198,14 @@ export default function CreateEventPage() {
     }
   };
 
-  const handleAIGenerate = (generatedData) => {
-    setValue("title", generatedData.title);
-    setValue("description", generatedData.description);
-    setValue("category", generatedData.category);
-    setValue("capacity", generatedData.suggestedCapacity);
-    setValue("ticketType", generatedData.suggestedTicketType);
-    toast.success("Event details filled! Customize as needed.");
-  };
+  // const handleAIGenerate = (generatedData) => {
+  //   setValue("title", generatedData.title);
+  //   setValue("description", generatedData.description);
+  //   setValue("category", generatedData.category);
+  //   setValue("capacity", generatedData.suggestedCapacity);
+  //   setValue("ticketType", generatedData.suggestedTicketType);
+  //   toast.success("Event details filled! Customize as needed.");
+  // };
 
   return (
     <div
@@ -219,7 +222,7 @@ export default function CreateEventPage() {
             </p>
           )}
         </div>
-        <AIEventCreator onEventGenerated={handleAIGenerate} />
+        {/* <AIEventCreator onEventGenerated={handleAIGenerate} /> */}
       </div>
 
       <div className="max-w-6xl mx-auto grid md:grid-cols-[320px_1fr] gap-10">
