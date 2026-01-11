@@ -1,36 +1,161 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+🎟️ Spott — Full-Stack Event Discovery & Management Platform
 
-## Getting Started
+Spott is a full-stack event discovery and management platform that enables users to discover events, create and manage events, book tickets, and handle event check-ins with modern UX and scalable backend architecture.
 
-First, run the development server:
+🔗 Live Demo: https://spott-psi.vercel.app/
 
-```bash
+🚀 Features
+
+🔍 Discover Events
+
+Browse featured and nearby events with rich visuals
+
+Filter events by location and category
+
+🛠️ Create & Manage Events
+
+Event creation with date, time, location, capacity, and ticketing
+
+Cover image selection via Unsplash
+
+Theme color customization (Pro feature)
+
+📂 My Events Dashboard
+
+Organizers can view and manage all created events
+
+Track registrations and event details
+
+🎫 My Tickets Dashboard
+
+Users can view all booked event tickets
+
+Each ticket includes a unique QR code
+
+📱 QR Code–Based Ticketing
+
+Auto-generated QR code for every event registration
+
+Enables seamless event check-in and verification
+
+🔐 Authentication & Authorization
+
+Secure user authentication using Clerk
+
+Role-based access for Free vs Pro users
+
+💳 Payments & Pro Subscription
+
+Integrated Clerk Payments
+
+Free vs Pro feature gating:
+
+Event creation limits
+
+Premium theme customization
+
+⚡ Real-Time Backend
+
+Powered by Convex for real-time data handling
+
+Secure server-side validations
+
+🧑‍💻 Tech Stack
+
+Frontend: Next.js (App Router), Tailwind CSS, Shadcn UI
+
+Backend: Convex (Database, Mutations & Queries)
+
+Authentication & Payments: Clerk
+
+APIs: Unsplash API, Gemini API (AI integration)
+
+UI Inspiration: Mobbin
+
+Deployment: Vercel
+
+Create a .env file in the root directory and add the following:
+
+# Convex
+CONVEX_DEPLOYMENT=
+NEXT_PUBLIC_CONVEX_URL=
+
+# Clerk Authentication & Payments
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+CLERK_JWT_ISSUER_DOMAIN=
+
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+
+# Unsplash API
+NEXT_PUBLIC_UNSPLASH_ACCESS_KEY=
+
+# Gemini AI
+GEMINI_API_KEY=
+
+🛠️ Installation & Setup
+# Clone the repository
+git clone https://github.com/your-username/spott.git
+
+# Navigate to project
+cd spott
+
+# Install dependencies
+npm install
+
+# Start Convex backend
+npx convex dev
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+App will be available at:
+👉 http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🧠 Architecture Highlights
 
-## Learn More
+Server-side Pro feature validation to prevent client-side abuse
 
-To learn more about Next.js, take a look at the following resources:
+Schema-validated database writes using Convex
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Separation of runtime flags vs persisted data (e.g., Pro status)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Scalable event & ticket data model
 
-## Deploy on Vercel
+📸 Screenshots
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Event Discovery Page
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Event Creation Flow
+
+My Events Dashboard
+
+My Tickets with QR Codes
+
+(Screenshots shown above 👆)
+
+📈 Project Status
+
+✅ Production deployed
+
+✅ Authentication & Payments live
+
+✅ Real-time backend operational
+
+🙌 Acknowledgements
+
+Clerk for Authentication & Payments
+
+Convex for real-time backend
+
+Unsplash for high-quality images
+
+Shadcn UI for component system
+
+📄 License
+
+This project is licensed under the MIT License.
+
+⭐ If you like this project, don’t forget to star the repo!
