@@ -156,7 +156,7 @@ const {
       }
 
       // Check event limit for Free users
-      if (!hasPro && currentUser?.freeEventsCreated >= 1) {
+      if (!hasPro && currentUser?.freeEventsCreated >= 3) {
         setUpgradeReason("limit");
         setShowUpgradeModal(true);
         return;
@@ -218,7 +218,7 @@ const {
           <h1 className="text-4xl font-bold">Create Event</h1>
           {!hasPro && (
             <p className="text-sm text-muted-foreground mt-2">
-              Free: {currentUser?.freeEventsCreated || 0}/1 events created
+              Free: {currentUser?.freeEventsCreated || 0}/3 events created
             </p>
           )}
         </div>

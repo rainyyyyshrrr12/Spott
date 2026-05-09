@@ -24,7 +24,7 @@ export default defineSchema({
     interests: v.optional(v.array(v.string())), // Min 3 categories
 
     // Organizer tracking (User Subscription)
-    freeEventsCreated: v.number(), // Track free event limit (1 free)
+    freeEventsCreated: v.number(), // Track free event limit (3 free)
 
     // Timestamps
     createdAt: v.number(),
